@@ -22,27 +22,27 @@ describe('Testes de estudo', () => {
         cy.get('td.description')
             .contains('TESTE2')
             .parent()
-            .find('img[onclick*=remove]')
+            .find('img[onclick*=remove]');
 
         cy.log('Estratégia 2: buscar todos os irmaos e buscar o que tem img + atributo')
         cy.get('td.description')
             .contains('TESTE2')
             .siblings()
-            .children('img[onclick*=remove]')
+            .children('img[onclick*=remove]');
 
         cy.log('Estratégia 3: buscar todos os irmãos, e filtrar pelo que tem img + atributo')
         cy.get('td.description')
             .contains('TESTE2')
             .siblings()
             .children()
-            .filter('img[onclick*=remove]')
+            .filter('img[onclick*=remove]');
 
         cy.log('Estratégia 4: buscar todos os irmaos mais velhos, seleciona o caçula e busca seu filho img')
         cy.get('td.description')
             .contains('TESTE2')
             .nextAll()
             .eq(2) //td //Poderia usar .last se quiser pegar o último elemento ou .fist pra pegar o primeiro
-            .find('img')
+            .find('img');
     });
     
 });
